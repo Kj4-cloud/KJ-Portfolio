@@ -27,7 +27,7 @@ function App() {
         <h3 className=" text-white text-[40px] ">Tools I work with  </h3>
       </div>
       <DisplayStack/>
-
+  
 
 
 

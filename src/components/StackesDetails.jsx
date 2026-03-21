@@ -1,3 +1,5 @@
+import './StackesDetailsForcss.css';
+
 
 export const StackesDetails = ({ children }) => {
   const items = Array.isArray(children)
@@ -7,8 +9,8 @@ export const StackesDetails = ({ children }) => {
     : [];
 
   return (
-    <div >
-      <div>
+    <div className="ConainerForStackDetails" >
+      <div className='badgeList' >
         {items.map((item, index) => (
           <span key={index} className="Tools">
             {typeof item === "string" ? item.trim() : item}
