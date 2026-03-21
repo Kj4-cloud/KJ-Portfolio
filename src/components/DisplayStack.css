@@ -1,0 +1,17 @@
+.stacksContainer{
+    border: 1px solid rgba(100, 160, 255, 0.3);
+    color: #c8d6e5;
+    font-size: 14px;
+    font-family: sans-serif;
+    background: transparent;
+   gap: 4px;
+   padding: 10px;
+   height: 100%;
+  
+}
+
+.Domain{
+    font-size: 15px;
+    font-weight: 600;
+    color: #0e419f;
+}
