@@ -11,7 +11,7 @@ export const DisplayStack = () => {
     return (
         <div>
            <div className="container text-center">
-  <div className="row row-cols-4 g-3">
+  <div className="row row-cols-4 g-1">
 
        <div className="col"><div className="stacksContainer"> <span className="Domain">Frontend</span><StackesDetails>{stack.Frontend}</StackesDetails></div></div>
        <div className="col"><div className="stacksContainer"> <span className="Domain">Backend</span><StackesDetails>{stack.Backend}</StackesDetails></div></div>

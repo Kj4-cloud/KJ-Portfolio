@@ -8,11 +8,8 @@ export const Navbar = () => {
       {/* <li>About</li>
       <li>Contact</li> */}
       
-      <li className="NavItem">Home</li>
-      <li className="NavItem">About</li>
-      <li className="NavItem">Project</li>
-      <li className="NavItem">Contact</li>
-
+      <li className="NavItem">No Sleep Just Code💻 </li>
+    
     </ol>
    
     </div>

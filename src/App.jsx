@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar";
 import { LeftContent } from "./components/LeftContent";
 import { ShortDetails } from "./components/ShortDetails";
 import { DisplayStack } from "./components/DisplayStack";
+import { ProjectDetails } from "./components/ProjectDetails";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <h3 className=" text-white text-[40px] ">Tools I work with  </h3>
       </div>
       <DisplayStack/>
+      <ProjectDetails/>
+
   
 
 

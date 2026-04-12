@@ -4,7 +4,6 @@ export const stack = createSlice({
   name: "stack",
   initialState: {
     Backend: [
-      
       "Node.js",
       "Express.js",
       "Django",
@@ -12,6 +11,7 @@ export const stack = createSlice({
       "PostgreSQL",
       "REST APIs",
     ],
+    
     Frontend: [
       " React",
       "Next.js",
