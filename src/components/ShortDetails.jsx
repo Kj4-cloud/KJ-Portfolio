@@ -2,8 +2,7 @@ export const ShortDetails = () => {
 
 
   return (
-             <div className="ExpYear">
-         
+             <div className="ExpYear flex-wrap justify-between gap-8 md:gap-0">
          <div className="WorkDetails" > 5+ 
           <br/><span className="workText">YEARS EXPERIENCE</span>
           </div>

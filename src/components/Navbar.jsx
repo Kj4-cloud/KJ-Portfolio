@@ -1,4 +1,15 @@
+import { useState, useEffect } from "react";
 export const Navbar = () => {
+
+   const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
 
@@ -7,8 +18,12 @@ export const Navbar = () => {
       <li>KARAN.<span className="devContent">DEV</span></li>
       {/* <li>About</li>
       <li>Contact</li> */}
+
+       <h1 className="text-xl TimeStyle">
+      {time.toLocaleTimeString()}
+    </h1>
       
-      <li className="NavItem">No Sleep Just Code💻 </li>
+      <li className="NavItem font-poppins text-1xl ">No Sleep Just Code💻 </li>
     
     </ol>
    

@@ -9,7 +9,7 @@ export const LeftContent = () => {
             <h1 className="Idea">
               <span className="systemName">systems</span> for the
             </h1>
-            <h1 className="Idea extraIdea">modern web</h1>
+            <h1 className="Idea extraIdea">modern web.</h1>
 
           <div className="InerSegment">
             Specializing in high-performance React architectures and type-safe 

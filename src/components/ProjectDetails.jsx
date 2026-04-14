@@ -12,12 +12,12 @@ export const ProjectDetails = () => {
   return (
           <div className={styles.ProjectsDetails}>
        <span className='text-blue-600'>Selected Work </span> 
-        <h1 className='text-white text-[60px] font-bold'>Projects that define my craft.</h1>
+        <h1 className='text-white text-4xl md:text-[60px] font-bold'>Projects that define my craft.</h1>
   
-          <div className={` ${styles.ProjectDetailsContainer} gap-2`}>
+          <div className={` ${styles.ProjectDetailsContainer} flex flex-col gap-6`}>
             <ProjectCard children={healthProject} />
             <ProjectCard children={carbonXProject} />
-            <ProjectCard children={healthProject} />
+           
             
           </div>
 

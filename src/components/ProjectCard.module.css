@@ -35,3 +35,20 @@
 .newStack{
   margin-left: 7px;
 }
+
+.LinksOfProject{
+
+  margin: 4px;
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* takes color from parent */
+}
+
+.LinksOfProject:hover{
+  color: #686868;
+}
+
+.Link_container {
+  display: flex;
+  align-items: center;  /* vertical alignment */
+  gap: 10px;            /* space between icons */
+}
