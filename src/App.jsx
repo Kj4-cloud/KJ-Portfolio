@@ -7,6 +7,7 @@ import { LeftContent } from "./components/LeftContent";
 import { ShortDetails } from "./components/ShortDetails";
 import { DisplayStack } from "./components/DisplayStack";
 import { ProjectDetails } from "./components/ProjectDetails";
+import {HackathonsDiv} from "./components/Hackathons";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
       </div>
       <DisplayStack/>
       <ProjectDetails/>
-
+      <HackathonsDiv/>
   
 
 

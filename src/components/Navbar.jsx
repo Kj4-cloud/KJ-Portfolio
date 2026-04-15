@@ -19,7 +19,7 @@ export const Navbar = () => {
       {/* <li>About</li>
       <li>Contact</li> */}
 
-       <h1 className="text-xl TimeStyle">
+       <h1 className="TimeStyle mb-0 text-white-50">
       {time.toLocaleTimeString()}
     </h1>
       

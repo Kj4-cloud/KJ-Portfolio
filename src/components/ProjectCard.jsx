@@ -32,11 +32,11 @@ export const ProjectCard = ({children}) => {
        <div className="w-full">
 
          <div     className="m-2">
-        <span>{children.Title}</span>
+        <h3 className="text-green-600">{children.Title}</h3>
         </div>
 
         <div className="m-2">
-        <span>{children.Description}</span>
+        <p>{children.Description}</p>
         </div>
 
         <div className="m-2"  >
