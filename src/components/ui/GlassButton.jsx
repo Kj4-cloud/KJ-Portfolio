@@ -22,7 +22,7 @@ export function GlassButton({
   `;
 
   const variants = {
-    primary: `bg-neutral-900 text-white hover:bg-neutral-800 shadow-sm`,
+    primary: `liquid-glass-button`,
     outline: `glass text-neutral-600 hover:text-neutral-900`,
   };
   return (

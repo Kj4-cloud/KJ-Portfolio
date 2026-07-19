@@ -63,7 +63,7 @@ export function Navbar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="glass-strong rounded-3xl px-4 sm:px-6 py-[13px] flex items-center justify-between shadow-sm relative">
+        <div className="glass-strong rounded-3xl px-4 sm:px-6 py-[14px] flex items-center justify-between shadow-sm relative">
 
           {/* Logo */}
           <button

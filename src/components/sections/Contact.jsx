@@ -99,8 +99,7 @@ export function Contact() {
               <a
                 href={personal.resumeUrl}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium text-sm
-                          bg-neutral-900 border border-neutral-900 text-white
-                          hover:bg-neutral-800 hover:-translate-y-[1px] active:translate-y-0
+                          liquid-glass-button hover:-translate-y-[1px] active:translate-y-0
                           transition-all duration-200 cursor-pointer shadow-sm"
                 download
               >
@@ -212,8 +211,7 @@ export function Contact() {
                 whileTap={{ scale: 0.99 }}
                 className="w-full flex items-center justify-center gap-2
                          px-6 py-3.5 rounded-xl font-medium text-sm
-                         bg-neutral-900 border border-neutral-900 text-white
-                         hover:bg-neutral-800 transition-all duration-200
+                         liquid-glass-button transition-all duration-200
                          cursor-pointer shadow-sm"
               >
                 {submitted ? (

@@ -96,7 +96,7 @@ export function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl
-                                 bg-neutral-100 border border-neutral-200
+                                 bg-neutral-10 border border-neutral-20
                                  text-neutral-700 hover:bg-neutral-200 hover:text-neutral-950
                                  transition-all duration-200 text-sm font-medium"
                       >
@@ -111,9 +111,7 @@ export function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl
-                                 bg-neutral-900 border border-neutral-900
-                                 text-white hover:bg-neutral-800
-                                 transition-all duration-200 text-sm font-medium"
+                                 liquid-glass-button transition-all duration-200 text-sm font-medium"
                       >
                         <ExternalLink size={15} />
                         Live Preview

@@ -79,7 +79,7 @@ export function Skills() {
                 border
                 ${
                   activeCategory === cat.id
-                    ? 'bg-neutral-900 border-neutral-900 text-white'
+                    ? 'liquid-glass-button border-transparent'
                     : 'bg-white border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-300'
                 }
               `}

@@ -75,7 +75,7 @@ export function Hero() {
               View Projects
             </GlassButton>
             <GlassButton
-              variant="outline"
+              variant="primary"
               onClick={() =>
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
               }
