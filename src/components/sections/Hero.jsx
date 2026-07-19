@@ -117,14 +117,14 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 1.035, y: -5 }}
+          whileHover={{ scale: 1.009, y: -2 }}
           transition={{ 
             type: "spring", 
             stiffness: 600, 
             damping: 22,
             // default: { duration: 0.5, delay: 0.4 }                                                                                     -mt-[12%] sm:-mt-[16%] lg:-mt-[20%]                 
           }}
-          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[350px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[620px] cursor-pointer group lg:self-start -mt-[5%] sm:-mt-[10%] lg:-mt-[7%]"
+          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[350px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[620px] cursor-pointer group lg:self-start -mt-[5%] sm:-mt-[5%] lg:-mt-[5%]"
         >
           <img
             src="/karanPfp.png"

@@ -8,8 +8,8 @@ export const personal = {
   role: 'Software Engineer',
   tagline: 'Building resilient systems for the modern web.',
   bio: 'Specializing in high-performance React architectures and type-safe systems. I engineer solutions that scale from prototype to production with zero compromises on code quality.',
-  email: 'karan@example.com',
-  location: 'India',
+  email: 'karanjadhav041006.com',
+  location: 'Mumbai,India',
   available: true,
 
   stats: [
@@ -22,7 +22,7 @@ export const personal = {
   social: {
     github: 'https://github.com/Kj4-cloud',
     linkedin: 'https://linkedin.com/in/karan-jadhav',
-    email: 'mailto:karan@example.com',
+    email: 'karanjadhav041006.com',
   },
 
   resumeUrl: '#',

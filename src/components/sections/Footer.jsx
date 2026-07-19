@@ -69,7 +69,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-neutral-100 text-center">
             <p className="text-xs text-neutral-400">
-              © {new Date().getFullYear()} Karan Jadhav. Built with React & Framer Motion.
+              © {new Date().getFullYear()} Karan Jadhav.
             </p>
           </div>
         </div>

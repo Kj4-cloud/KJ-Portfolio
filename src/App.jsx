@@ -1,4 +1,5 @@
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
+import { LiquidGlassCursor } from '@/components/ui/LiquidGlassCursor';
 import { Navbar } from '@/components/sections/Navbar';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
@@ -15,6 +16,7 @@ import { Footer } from '@/components/sections/Footer';
 function App() {
   return (
     <SmoothScroll>
+      <LiquidGlassCursor />
       <Navbar />
       <main>
         <Hero />
