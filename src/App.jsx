@@ -1,42 +1,32 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import { SmoothScroll } from '@/components/layout/SmoothScroll';
+import { Navbar } from '@/components/sections/Navbar';
+import { Hero } from '@/components/sections/Hero';
+import { About } from '@/components/sections/About';
+import { Skills } from '@/components/sections/Skills';
+import { Projects } from '@/components/sections/Projects';
+import { Timeline } from '@/components/sections/Timeline';
+import { Achievements } from '@/components/sections/Achievements';
+import { Contact } from '@/components/sections/Contact';
+import { Footer } from '@/components/sections/Footer';
 
-import { Photo } from "./components/Photo";
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { LeftContent } from "./components/LeftContent";
-import { ShortDetails } from "./components/ShortDetails";
-import { DisplayStack } from "./components/DisplayStack";
-import { ProjectDetails } from "./components/ProjectDetails";
-import {HackathonsDiv} from "./components/Hackathons";
-
+/**
+ * App — Clean minimal portfolio shell
+ */
 function App() {
   return (
-    <>
-      <div className="MainContainer">
-        <Navbar />
-        <div className="HeroContainer">
-          <div className="LeftSection">
-            <LeftContent />
-          </div>
-          <div className="PhotoContainer">
-            <Photo />
-          </div>
-        </div>
-     <hr className="hrfornew"/>
-      <ShortDetails/>
-      <div className="StackDiv">
-        <span className="Stack">TECHINICAL STACK</span>
-        <h3 className=" text-white text-[40px] ">Tools I work with  </h3>
-      </div>
-      <DisplayStack/>
-      <ProjectDetails/>
-      <HackathonsDiv/>
-  
-
-
-
-      </div>
-    </>
+    <SmoothScroll>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Timeline />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
+    </SmoothScroll>
   );
 }
 
