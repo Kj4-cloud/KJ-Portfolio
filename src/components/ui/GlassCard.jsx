@@ -8,12 +8,14 @@ export function GlassCard({
   children,
   className = '',
   tilt = false,
+  variant = 'default',
   ...props
 }) {
+  const cardClass = variant === 'liquid' ? 'liquid-glass-card' : 'glass-card';
   return (
     <motion.div
       whileHover={tilt ? { y: -4, transition: { duration: 0.2 } } : undefined}
-      className={`relative rounded-2xl glass-card ${className}`}
+      className={`relative rounded-[28px] ${cardClass} ${className}`}
       {...props}
     >
       {children}

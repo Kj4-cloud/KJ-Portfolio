@@ -14,7 +14,7 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center"
     >
-      <div className="relative z-10 section-padding pt-32 pb-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 px-6 md:px-12 lg:px-20 xl:px-32 pt-24 pb-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         {/* Text */}
         <div className="flex-1 max-w-2xl">
           <motion.div
@@ -122,9 +122,9 @@ export function Hero() {
             type: "spring", 
             stiffness: 600, 
             damping: 22,
-            default: { duration: 0.5, delay: 0.4 }
+            // default: { duration: 0.5, delay: 0.4 }                                                                                     -mt-[12%] sm:-mt-[16%] lg:-mt-[20%]                 
           }}
-          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[350px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[620px] cursor-pointer group"
+          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[350px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[620px] cursor-pointer group lg:self-start -mt-[5%] sm:-mt-[10%] lg:-mt-[7%]"
         >
           <img
             src="/karanPfp.png"

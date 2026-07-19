@@ -17,6 +17,40 @@ const iconMap = {
   Wrench,
 };
 
+const brandColors = {
+  // Frontend
+  'React': { color: 'rgba(97, 218, 251, 0.85)', glow: 'rgba(97, 218, 251, 0.3)' },
+  'Next.js': { color: 'rgba(0, 0, 0, 0.7)', glow: 'rgba(0, 0, 0, 0.15)' },
+  'TypeScript': { color: 'rgba(49, 120, 198, 0.85)', glow: 'rgba(49, 120, 198, 0.3)' },
+  'Tailwind CSS': { color: 'rgba(6, 182, 212, 0.85)', glow: 'rgba(6, 182, 212, 0.3)' },
+  'Framer Motion': { color: 'rgba(240, 36, 182, 0.85)', glow: 'rgba(240, 36, 182, 0.3)' },
+  'Zustand': { color: 'rgba(69, 49, 36, 0.85)', glow: 'rgba(69, 49, 36, 0.25)' },
+  'React Query': { color: 'rgba(255, 65, 84, 0.85)', glow: 'rgba(255, 65, 84, 0.3)' },
+
+  // Backend
+  'Node.js': { color: 'rgba(51, 153, 51, 0.85)', glow: 'rgba(51, 153, 51, 0.25)' },
+  'Express.js': { color: 'rgba(53, 53, 53, 0.85)', glow: 'rgba(53, 53, 53, 0.15)' },
+  'Django': { color: 'rgba(9, 46, 32, 0.85)', glow: 'rgba(9, 46, 32, 0.25)' },
+  'Flask': { color: 'rgba(0, 0, 0, 0.7)', glow: 'rgba(0, 0, 0, 0.15)' },
+  'PostgreSQL': { color: 'rgba(51, 103, 145, 0.85)', glow: 'rgba(51, 103, 145, 0.3)' },
+  'REST APIs': { color: 'rgba(0, 150, 136, 0.85)', glow: 'rgba(0, 150, 136, 0.3)' },
+
+  // DevOps
+  'Docker': { color: 'rgba(36, 150, 237, 0.85)', glow: 'rgba(36, 150, 237, 0.3)' },
+  'Kubernetes': { color: 'rgba(50, 108, 229, 0.85)', glow: 'rgba(50, 108, 229, 0.3)' },
+  'Jenkins': { color: 'rgba(210, 73, 57, 0.85)', glow: 'rgba(210, 73, 57, 0.25)' },
+  'Vercel': { color: 'rgba(0, 0, 0, 0.7)', glow: 'rgba(0, 0, 0, 0.15)' },
+  'AWS': { color: 'rgba(255, 153, 0, 0.85)', glow: 'rgba(255, 153, 0, 0.25)' },
+
+  // Tools
+  'Git': { color: 'rgba(240, 80, 50, 0.85)', glow: 'rgba(240, 80, 50, 0.3)' },
+  'GitHub': { color: 'rgba(24, 23, 23, 0.85)', glow: 'rgba(24, 23, 23, 0.2)' },
+  'VS Code': { color: 'rgba(0, 122, 204, 0.85)', glow: 'rgba(0, 122, 204, 0.3)' },
+
+  // Extra/Other typical techs
+  'Supabase': { color: 'rgba(62, 207, 142, 0.85)', glow: 'rgba(62, 207, 142, 0.3)' }
+};
+
 export function Skills() {
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -73,10 +107,10 @@ export function Skills() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.25, delay: i * 0.04 }}
               >
-                <GlassCard className="p-6 h-full group" tilt={false}>
+                <GlassCard className="p-6 h-full group" variant="liquid" tilt={false}>
                   {/* Category header */}
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="p-2.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-700 transition-colors duration-200 group-hover:bg-neutral-100">
+                    <div className="p-2.5 rounded-xl bg-white/45 border border-white/50 text-neutral-800 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/60 group-hover:border-white/75 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
                       <Icon size={18} />
                     </div>
                     <div>
@@ -91,17 +125,24 @@ export function Skills() {
 
                   {/* Skills list */}
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, j) => (
-                      <motion.span
-                        key={skill}
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.15 + j * 0.03 }}
-                        className="glass-pill"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
+                    {category.skills.map((skill, j) => {
+                      const brand = brandColors[skill] || { color: 'rgba(255, 255, 255, 0.85)', glow: 'rgba(255, 255, 255, 0.1)' };
+                      return (
+                        <motion.span
+                          key={skill}
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.15 + j * 0.03 }}
+                          className="glass-pill"
+                          style={{
+                            '--hover-color': brand.color,
+                            '--hover-glow': brand.glow,
+                          }}
+                        >
+                          {skill}
+                        </motion.span>
+                      );
+                    })}
                   </div>
                 </GlassCard>
               </motion.div>

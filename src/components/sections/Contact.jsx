@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { personal } from '@/data/personal';
-import { Send, Mail, MapPin, Github, Linkedin, CheckCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, CheckCircle, Download } from 'lucide-react';
 
 /**
  * Contact — Minimal contact form with animated inputs, floating labels, and info panel
@@ -92,6 +92,21 @@ export function Contact() {
                   </div>
                 </GlassCard>
               ))}
+            </div>
+
+            {/* Download Resume Button */}
+            <div className="pt-2">
+              <a
+                href={personal.resumeUrl}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium text-sm
+                          bg-neutral-900 border border-neutral-900 text-white
+                          hover:bg-neutral-800 hover:-translate-y-[1px] active:translate-y-0
+                          transition-all duration-200 cursor-pointer shadow-sm"
+                download
+              >
+                <Download size={15} />
+                Download Resume
+              </a>
             </div>
 
             {/* Social links */}

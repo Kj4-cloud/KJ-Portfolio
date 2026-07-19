@@ -13,9 +13,9 @@ export const personal = {
   available: true,
 
   stats: [
-    { value: 5, suffix: '+', label: 'Years Experience' },
-    { value: 40, suffix: '+', label: 'Projects Shipped' },
-    { value: 10, suffix: '+', label: 'Clients Served' },
+    { value: 1, suffix: '+', label: 'Years Experience' },
+    { value: 5, suffix: '+', label: 'Projects Shipped' },
+    { value: 2, suffix: '+', label: 'Clients Served' },
     { value: 5, suffix: '+', label: 'Awards Won' },
   ],
 

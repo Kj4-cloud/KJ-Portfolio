@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { personal } from '@/data/personal';
-import { Download, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { id: 'about', label: 'About' },
@@ -27,10 +27,11 @@ export function Navbar() {
           }
         });
       },
-      { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+      { threshold: 0.05, rootMargin: '-20% 0px -55% 0px' }
     );
 
-    navLinks.forEach(({ id }) => {
+    const observedIds = ['hero', ...navLinks.map(({ id }) => id)];
+    observedIds.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -55,14 +56,14 @@ export function Navbar() {
       />
 
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, x: "-50%", opacity: 0 }}
+        animate={{ y: 0, x: "-50%", opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-4xl"
+        className="fixed top-4 left-1/2 z-50 w-[95%] max-w-4xl"
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="glass-strong rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between shadow-sm">
+        <div className="glass-strong rounded-3xl px-4 sm:px-6 py-[13px] flex items-center justify-between shadow-sm relative">
 
           {/* Logo */}
           <button
@@ -73,7 +74,7 @@ export function Navbar() {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
             {navLinks.map(({ id, label }) => (
               <MagneticButton key={id} strength={0.1}>
                 <button
@@ -101,16 +102,6 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href={personal.resumeUrl}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium
-                        rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 transition-colors"
-              download
-            >
-              <Download size={13} />
-              Resume
-            </a>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 text-neutral-500 hover:text-neutral-900 transition-colors bg-transparent border-none cursor-pointer"
