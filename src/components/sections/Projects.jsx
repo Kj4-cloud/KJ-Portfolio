@@ -24,31 +24,31 @@ export function Projects() {
               className="p-6 sm:p-8 md:p-10 group"
               tilt={false}
             >
-              <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr] gap-8">
+              <div className="flex flex-col lg:grid lg:grid-cols-[200px_1fr] gap-6 sm:gap-8">
                 {/* Metadata sidebar */}
-                <div className="space-y-5">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 pb-4 border-b border-neutral-100 lg:border-b-0 lg:pb-0 lg:grid-cols-1 lg:space-y-5">
                   <div>
-                    <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       <Calendar size={12} />
                       Year
                     </div>
-                    <p className="text-neutral-800 font-medium">{project.year}</p>
+                    <p className="text-neutral-800 font-medium text-sm sm:text-base">{project.year}</p>
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       <User size={12} />
                       Role
                     </div>
-                    <p className="text-neutral-800 font-medium">{project.role}</p>
+                    <p className="text-neutral-800 font-medium text-sm sm:text-base">{project.role}</p>
                   </div>
 
                   <div>
-                    <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
+                    <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-400 text-xs uppercase tracking-wider mb-1">
                       <GitBranch size={12} />
                       Scale
                     </div>
-                    <p className="text-neutral-800 font-medium text-sm">{project.scale}</p>
+                    <p className="text-neutral-800 font-medium text-xs sm:text-sm">{project.scale}</p>
                   </div>
                 </div>
 
@@ -89,7 +89,7 @@ export function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <MagneticButton strength={0.15}>
                       <a
                         href={project.github}

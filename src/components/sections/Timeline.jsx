@@ -55,12 +55,12 @@ export function Timeline() {
                   className={`
                     flex flex-col md:flex-row items-start gap-4 md:gap-8
                     ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}
-                    pl-12 md:pl-0
+                    pl-10 sm:pl-12 md:pl-0
                   `}
                 >
                   {/* Content card */}
-                  <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="glass-card rounded-2xl p-5 md:p-6 inline-block text-left">
+                  <div className={`w-full flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
+                    <div className="glass-card rounded-2xl p-4 sm:p-5 md:p-6 w-full md:w-auto inline-block text-left">
                       <div className="flex items-center gap-2 mb-2">
                         <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${badgeClasses}`}>
                           <Icon size={12} />
@@ -84,7 +84,7 @@ export function Timeline() {
                   </div>
 
                   {/* Timeline node */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
+                  <div className="absolute left-4 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 top-4 md:top-6 flex items-center justify-center">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}

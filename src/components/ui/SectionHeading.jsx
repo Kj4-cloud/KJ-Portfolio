@@ -20,17 +20,17 @@ export function SectionHeading({
   };
 
   return (
-    <div ref={ref} className={`mb-14 md:mb-18 max-w-3xl ${alignClasses[align]} ${className}`}>
+    <div ref={ref} className={`mb-10 sm:mb-14 md:mb-18 max-w-3xl ${alignClasses[align]} ${className}`}>
       <motion.span
         initial={{ opacity: 0, y: 8 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="inline-block text-xs font-medium uppercase tracking-[0.15em] text-neutral-400 mb-3"
+        className="inline-block text-[11px] sm:text-xs font-medium uppercase tracking-[0.15em] text-neutral-400 mb-2 sm:mb-3"
       >
         {label}
       </motion.span>
 
-      <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-[1.1] tracking-tight text-neutral-900">
+      <h2 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl leading-[1.15] sm:leading-[1.1] tracking-tight text-neutral-900">
         {words.map((word, i) => (
           <motion.span
             key={i}

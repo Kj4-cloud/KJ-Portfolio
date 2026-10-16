@@ -19,9 +19,9 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-neutral-200 bg-white" role="contentinfo">
-      <div className="section-padding py-12 md:py-16">
+      <div className="section-padding py-10 sm:py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.02 }}

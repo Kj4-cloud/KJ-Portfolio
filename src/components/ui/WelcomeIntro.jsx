@@ -31,7 +31,7 @@ export function WelcomeIntro({ onEnter }) {
             duration: 0.4,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="font-display font-medium text-4xl sm:text-5xl md:text-6xl text-neutral-900 tracking-tight mb-4 select-none"
+          className="font-display font-medium text-3xl sm:text-5xl md:text-6xl text-neutral-900 tracking-tight mb-4 select-none"
         >
           Welcome to My Portfolio
         </motion.h1>

@@ -3,7 +3,7 @@ import { personal } from '@/data/personal';
 import { GlassButton } from '@/components/ui/GlassButton';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { MagneticButton } from '@/components/ui/MagneticButton';
-import { Github, Linkedin, ArrowDown, Mail } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, Mail, Download } from 'lucide-react';
 
 /**
  * Hero — Clean minimal hero with large typography, profile photo, and stats
@@ -14,14 +14,14 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center"
     >
-      <div className="relative z-10 px-6 md:px-12 lg:px-20 xl:px-32 pt-24 pb-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 pt-28 sm:pt-32 pb-10 sm:pb-12 flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-20">
         {/* Text */}
         <div className="flex-1 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 mb-6 sm:mb-8"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
             <span className="text-xs font-medium text-neutral-500 uppercase tracking-wide">
@@ -29,7 +29,7 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-8 text-neutral-900">
+          <h1 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] sm:leading-[1.05] tracking-tight mb-6 sm:mb-8 text-neutral-900">
             {['Building', 'resilient', 'systems', 'for the', 'modern', 'web.'].map(
               (word, i) => (
                 <motion.span
@@ -55,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="text-base sm:text-lg text-neutral-500 leading-relaxed mb-10 max-w-lg"
+            className="text-sm sm:text-base md:text-lg text-neutral-500 leading-relaxed mb-8 sm:mb-10 max-w-lg"
           >
             {personal.bio}
           </motion.p>
@@ -64,15 +64,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.05 }}
-            className="flex flex-wrap items-center gap-3 mb-10"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-8 sm:mb-10"
           >
             <GlassButton
               variant="primary"
-              onClick={() =>
-                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-              }
+              href={personal.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Karan_Jadhav_Resume.pdf"
+              icon={Download}
             >
-              View Projects
+              Download Resume
             </GlassButton>
             <GlassButton
               variant="primary"
@@ -122,9 +124,8 @@ export function Hero() {
             type: "spring", 
             stiffness: 600, 
             damping: 22,
-            // default: { duration: 0.5, delay: 0.4 }                                                                                     -mt-[12%] sm:-mt-[16%] lg:-mt-[20%]                 
           }}
-          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[350px] sm:max-w-[440px] md:max-w-[530px] lg:max-w-[620px] cursor-pointer group lg:self-start -mt-[5%] sm:-mt-[5%] lg:-mt-[5%]"
+          className="relative flex-shrink-0 lg:ml-auto w-full max-w-[290px] sm:max-w-[420px] md:max-w-[500px] lg:max-w-[620px] cursor-pointer group lg:self-start mt-2 sm:mt-0 lg:-mt-[5%] mx-auto lg:mx-0"
         >
           <img
             src="/karanPfp.png"
@@ -152,18 +153,18 @@ export function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.3 }}
-        className="relative z-10 px-6 md:px-12 lg:px-20 xl:px-32 pb-12"
+        className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 pb-10 sm:pb-12"
       >
-        <div className="border border-neutral-200 rounded-2xl p-6 md:p-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="border border-neutral-200 rounded-2xl p-4 sm:p-6 md:p-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {personal.stats.map((stat, i) => (
               <div key={i} className="text-center">
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
-                  className="font-display font-bold text-3xl md:text-4xl text-neutral-900"
+                  className="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-neutral-900"
                 />
-                <p className="text-xs uppercase tracking-widest text-neutral-400 mt-2 font-medium">
+                <p className="text-[10px] sm:text-xs uppercase tracking-widest text-neutral-400 mt-1.5 sm:mt-2 font-medium">
                   {stat.label}
                 </p>
               </div>

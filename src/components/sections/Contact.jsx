@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { personal } from '@/data/personal';
-import { Send, Mail, MapPin, Github, Linkedin, CheckCircle, Download, Loader2, AlertCircle } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
 /**
  * Contact — Minimal contact form with animated inputs, floating labels, and info panel
@@ -115,12 +115,12 @@ export function Contact() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-neutral-900 text-sm hover:text-neutral-700 transition-colors"
+                          className="text-neutral-900 text-sm hover:text-neutral-700 transition-colors break-all sm:break-normal"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-neutral-900 text-sm">{item.value}</p>
+                        <p className="text-neutral-900 text-sm break-all sm:break-normal">{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -128,21 +128,6 @@ export function Contact() {
               ))}
             </div>
 
-            {/* Download Resume Button */}
-            <div className="pt-2">
-              <a
-                href={personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Karan_Jadhav_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium text-sm
-                          liquid-glass-button hover:-translate-y-[1px] active:translate-y-0
-                          transition-all duration-200 cursor-pointer shadow-sm"
-              >
-                <Download size={15} />
-                Download Resume
-              </a>
-            </div>
 
             {/* Social links */}
             <div className="flex items-center gap-3 pt-2">
@@ -181,7 +166,7 @@ export function Contact() {
 
         {/* Contact form */}
         <ScrollReveal animation="fade-up">
-          <GlassCard className="p-6 sm:p-8" tilt={false}>
+          <GlassCard className="p-5 sm:p-6 md:p-8" tilt={false}>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               {/* Anti-spam honeypot */}
               <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />

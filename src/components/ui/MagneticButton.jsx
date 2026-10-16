@@ -15,6 +15,7 @@ export function MagneticButton({ children, className = '', strength = 0.3, ...pr
 
   const handleMouseMove = (e) => {
     if (!ref.current) return;
+    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
