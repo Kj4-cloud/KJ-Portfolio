@@ -25,5 +25,5 @@ export const personal = {
     email: 'mailto:karanjadhav041006@gmail.com',
   },
 
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/Karan_Jadhav_Resume.pdf',
 };
