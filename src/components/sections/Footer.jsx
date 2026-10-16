@@ -36,8 +36,8 @@ export function Footer() {
                 <MagneticButton key={label} strength={0.15}>
                   <a
                     href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={href.startsWith('mailto:') ? undefined : '_blank'}
+                    rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                     aria-label={label}
                     className="flex items-center justify-center w-9 h-9 rounded-lg
                              bg-white border border-neutral-200

@@ -18,13 +18,13 @@ export function About() {
     {
       icon: Briefcase,
       label: 'Experience',
-      value: '5+ Years',
+      value: '1 Year',
       color: 'text-neutral-700 bg-neutral-100',
     },
     {
       icon: GraduationCap,
       label: 'Focus',
-      value: 'Full-Stack Development',
+      value: 'Backend',
       color: 'text-neutral-700 bg-neutral-100',
     },
   ];
@@ -37,7 +37,7 @@ export function About() {
         {/* Text Content */}
         <div className="space-y-6">
           {[
-            'I\'m a software engineer who believes in building things that matter. With over 5 years of hands-on experience, I\'ve shipped 40+ projects spanning healthcare systems, blockchain platforms, and everything in between.',
+            'I\'m a software engineer who believes in building things that matter. With over 1 year of hands-on experience, I\'ve shipped 3+ projects spanning healthcare systems, blockchain platforms, and everything in between.',
             'My approach combines the rigor of clean architecture with the creativity of modern UI engineering. Every line of code I write is intentional — designed to scale, built to last.',
             'I specialize in React ecosystems, Node.js backend architecture, and cloud infrastructure. When I\'m not coding, I\'m competing in hackathons or exploring emerging technologies like AI and blockchain.',
           ].map((paragraph, i) => (

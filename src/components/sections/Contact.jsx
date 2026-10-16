@@ -4,7 +4,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { personal } from '@/data/personal';
-import { Send, Mail, MapPin, Github, Linkedin, CheckCircle, Download } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, CheckCircle, Download, Loader2, AlertCircle } from 'lucide-react';
 
 /**
  * Contact — Minimal contact form with animated inputs, floating labels, and info panel
@@ -16,18 +16,52 @@ export function Contact() {
     message: '',
   });
   const [focused, setFocused] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef(null);
 
   const handleChange = (e) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (errorMessage) setErrorMessage('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormState({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const accessKey =
+        import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+      const formData = new FormData(e.target);
+      formData.append('access_key', accessKey);
+      formData.append('subject', `Portfolio message from ${formState.name}`);
+      formData.append('from_name', formState.name || 'Portfolio Visitor');
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormState({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error(data.message || 'Error submitting form');
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      setErrorMessage(
+        `Unable to send message right now. Please email directly at ${personal.email}`
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses = `
@@ -98,10 +132,12 @@ export function Contact() {
             <div className="pt-2">
               <a
                 href={personal.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Karan_Jadhav_Resume.pdf"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium text-sm
                           liquid-glass-button hover:-translate-y-[1px] active:translate-y-0
                           transition-all duration-200 cursor-pointer shadow-sm"
-                download
               >
                 <Download size={15} />
                 Download Resume
@@ -147,6 +183,9 @@ export function Contact() {
         <ScrollReveal animation="fade-up">
           <GlassCard className="p-6 sm:p-8" tilt={false}>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+              {/* Anti-spam honeypot */}
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
               {/* Name */}
               <div className="relative">
                 <input
@@ -157,6 +196,7 @@ export function Contact() {
                   onChange={handleChange}
                   onFocus={() => setFocused('name')}
                   onBlur={() => setFocused('')}
+                  disabled={isSubmitting}
                   className={inputClasses}
                   required
                   aria-label="Your name"
@@ -176,6 +216,7 @@ export function Contact() {
                   onChange={handleChange}
                   onFocus={() => setFocused('email')}
                   onBlur={() => setFocused('')}
+                  disabled={isSubmitting}
                   className={inputClasses}
                   required
                   aria-label="Your email"
@@ -194,6 +235,7 @@ export function Contact() {
                   onChange={handleChange}
                   onFocus={() => setFocused('message')}
                   onBlur={() => setFocused('')}
+                  disabled={isSubmitting}
                   rows={5}
                   className={`${inputClasses} resize-none`}
                   required
@@ -204,19 +246,37 @@ export function Contact() {
                 </label>
               </div>
 
+              {/* Error notice */}
+              {errorMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-2.5 p-3.5 rounded-xl bg-red-50/80 border border-red-200 text-red-700 text-xs"
+                >
+                  <AlertCircle size={15} className="mt-0.5 shrink-0 text-red-500" />
+                  <span>{errorMessage}</span>
+                </motion.div>
+              )}
+
               {/* Submit button */}
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
+                disabled={isSubmitting || submitted}
+                whileHover={!isSubmitting && !submitted ? { scale: 1.01 } : undefined}
+                whileTap={!isSubmitting && !submitted ? { scale: 0.99 } : undefined}
                 className="w-full flex items-center justify-center gap-2
                          px-6 py-3.5 rounded-xl font-medium text-sm
                          liquid-glass-button transition-all duration-200
-                         cursor-pointer shadow-sm"
+                         cursor-pointer shadow-sm disabled:opacity-75 disabled:cursor-not-allowed"
               >
-                {submitted ? (
+                {isSubmitting ? (
                   <>
-                    <CheckCircle size={15} className="text-emerald-400" />
+                    <Loader2 size={15} className="animate-spin text-neutral-600" />
+                    Sending Message...
+                  </>
+                ) : submitted ? (
+                  <>
+                    <CheckCircle size={15} className="text-emerald-500" />
                     Message Sent!
                   </>
                 ) : (

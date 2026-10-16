@@ -3,7 +3,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { personal } from '@/data/personal';
-import { Trophy, Star, GitPullRequest, Code2 } from 'lucide-react';
+import { Trophy, Code2 } from 'lucide-react';
 
 /**
  * Achievements — Stats and recognition highlights
@@ -12,31 +12,17 @@ export function Achievements() {
   const highlights = [
     {
       icon: Trophy,
-      title: 'Hackathon Wins',
-      value: 2,
-      suffix: '+',
-      description: 'Competitive hackathon projects recognized for innovation',
+      title: 'Hackathon Finalist',
+      value: 4,
+      suffix: '',
+      description: 'Finalist in 4 competitive hackathons recognized for innovation',
     },
     {
       icon: Code2,
       title: 'Projects Built',
-      value: 40,
+      value: 3,
       suffix: '+',
       description: 'Production-grade applications shipped and maintained',
-    },
-    {
-      icon: GitPullRequest,
-      title: 'Open Source',
-      value: 50,
-      suffix: '+',
-      description: 'Contributions across various repositories',
-    },
-    {
-      icon: Star,
-      title: 'Awards',
-      value: 5,
-      suffix: '+',
-      description: 'Recognition for excellence in engineering and design',
     },
   ];
 
@@ -49,7 +35,7 @@ export function Achievements() {
       />
 
       {/* Achievement cards grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {highlights.map((item, i) => (
           <ScrollReveal key={i} animation="fade-up" delay={i * 0.08}>
             <GlassCard className="p-6 text-center h-full" tilt={false}>

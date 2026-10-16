@@ -8,22 +8,22 @@ export const personal = {
   role: 'Software Engineer',
   tagline: 'Building resilient systems for the modern web.',
   bio: 'Specializing in high-performance React architectures and type-safe systems. I engineer solutions that scale from prototype to production with zero compromises on code quality.',
-  email: 'karanjadhav041006.com',
-  location: 'Mumbai,India',
+  email: 'karanjadhav041006@gmail.com',
+  location: 'Navi Mumbai,India',
   available: true,
 
   stats: [
     { value: 1, suffix: '+', label: 'Years Experience' },
-    { value: 5, suffix: '+', label: 'Projects Shipped' },
+    { value: 2, suffix: '+', label: 'Projects Shipped' },
     { value: 2, suffix: '+', label: 'Clients Served' },
-    { value: 5, suffix: '+', label: 'Awards Won' },
+    { value: 4, suffix: '', label: 'Hackathon Finalist' },
   ],
 
   social: {
     github: 'https://github.com/Kj4-cloud',
     linkedin: 'https://linkedin.com/in/karan-jadhav',
-    email: 'karanjadhav041006.com',
+    email: 'mailto:karanjadhav041006@gmail.com',
   },
 
-  resumeUrl: '#',
+  resumeUrl: '/resume.pdf',
 };

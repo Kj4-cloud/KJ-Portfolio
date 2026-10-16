@@ -12,7 +12,7 @@ import { Timeline } from '@/components/sections/Timeline';
 import { Achievements } from '@/components/sections/Achievements';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
-
+import { Agentation } from "agentation";
 /**
  * App — Clean minimal portfolio shell with cinematic intro overlay
  */
@@ -59,6 +59,8 @@ function App() {
           <Footer />
         </SmoothScroll>
       </motion.div>
+        {/* Visual Feedback & UI Annotation Toolbar */}
+      <Agentation />
     </>
   );
 }
