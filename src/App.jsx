@@ -60,7 +60,7 @@ function App() {
         </SmoothScroll>
       </motion.div>
         {/* Visual Feedback & UI Annotation Toolbar */}
-      <Agentation />
+      
     </>
   );
 }
