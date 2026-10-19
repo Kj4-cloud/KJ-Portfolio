@@ -12,10 +12,23 @@ import { Timeline } from '@/components/sections/Timeline';
 import { Achievements } from '@/components/sections/Achievements';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
+import { lazy, Suspense } from "react";
 import { Agentation } from "agentation";
 /**
  * App — Clean minimal portfolio shell with cinematic intro overlay
+ * 
+ * 
  */
+
+const DevAgentation = import.meta.env.DEV
+  ? lazy(() =>
+      import("agentation").then(({ Agentation }) => ({
+        default: Agentation,
+      }))
+    )
+  : null;
+
+
 function App() {
   const [showIntro, setShowIntro] = useState(true);
 
@@ -60,6 +73,12 @@ function App() {
         </SmoothScroll>
       </motion.div>
         {/* Visual Feedback & UI Annotation Toolbar */}
+
+          {DevAgentation && (
+        <Suspense fallback={null}>
+          <DevAgentation />
+        </Suspense>
+      )}
       
     </>
   );
