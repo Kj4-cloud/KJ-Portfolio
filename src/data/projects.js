@@ -29,7 +29,7 @@ export const projects = [
     description:
       'Carbon X is a blockchain-based carbon credit trading platform that verifies farmland using satellite NDVI analysis and issues secure digital credits. Farmers earn income by adopting sustainable practices, while companies purchase verified credits to offset emissions through a transparent, tamper-proof marketplace.',
     technologies: ['React', 'Supabase', 'PostgreSQL'],
-    github: 'https://github.com/',
+    github: 'https://github.com/Kj4-cloud/Carbon-x',
     live: 'https://carbon-x-pi.vercel.app/',
     highlights: [
       'Satellite NDVI farmland verification',
@@ -37,4 +37,21 @@ export const projects = [
       'Real-time marketplace dashboard',
     ],
   },
+   {
+    id: 'StockMate',
+    year: 2022,
+    title: 'StockMate',
+    role: 'Full Stack Devloper',
+    scale: '11 commits in 1 months',
+    description:
+      'StockMate is a web-based application designed to simplify electrical store operations through inventory management, stock tracking, material request processing, quotation generation, GST-based invoicing, and sales analytics. Built using React.js and Supabase, it streamlines billing workflows and helps businesses manage their products and stock efficiently.',
+    technologies: ['React', 'Supabase', 'PostgreSQL'],
+    github: 'https://github.com/Kj4-cloud/StockMate',
+    live: 'https://stockmateo.vercel.app/',
+    highlights: [
+      'Inventory and stock management',
+      'AI-powered material list extraction and product matching',
+      'Real-time stock tracking and low-stock alerts',
+    ],
+  }
 ];
